@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="et">
+<title>I026 session 2 - POST form</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Taivo Liik">
+
+
+<body>
+	
+	<h1>Forms</h1>
+	<div>
+	<!--Luua uus vorm (soovitatavalt eraldi html faili), mis samuti saadab infot endale AGA teeb seda POST meetodil.
+		Lisada vormi üks tekstiala (textarea) ning vähemalt üks select element.
+
+		select elemendi vahele paigutatakse selekteeringu valikuid väljendavate value atribuutidega option elemendid. Neid olgu sel juhul vähemalt 3.-->
+		<h2>POST method</h2>
+		<div>
+		<textarea name="text" id="text" placeholder="Enter text here..." form="textarea" cols="45" rows="5"></textarea> <br>
+		<form action="#" method="post" id="textarea">
+			<select name="value_id">
+				<option value="1">First</option>
+				<option value="2">Second</option>
+				<option value="3">Third</option>
+				<option value="4">Fourth</option>
+			</select><br>
+			<button type="submit" value="Submit">Send!</button>
+			<input type="submit" value="Submit">
+		</form>
+
+
+				
+		</div>
+	</div>
+</body>
+</html>
