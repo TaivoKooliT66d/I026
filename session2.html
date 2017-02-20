@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="et">
+<title>I026 session 2 - Tables & GET</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Taivo Liik">
+
+
+<body>
+	<div>
+		<h1>Tables</h1>
+		<div>
+			<h2>First table</h2>
+			<!--luua lihtne pealkirjaga (caption) tabel nt. lemmikloomadest, -muusikast või -filmidest, kus on esimeses reas th elemendid veerupealkirjadega (nt: nimi, vanus, tõug) Tabelis olgu vähemat 4 rida
+			. http://enos.itcollege.ee/~ttanav/VRI/Kodused/02/ylesanne.html -->
+			<table border="1">
+				<caption>My favorite movies</caption>
+				<tr>
+					<th>Year</th>
+					<th>Movie (IMDB link)</th>
+					<th>Duration</th>
+				</tr>
+				<tr>
+					<td>1999</td>
+					<td><a href="http://www.imdb.com/title/tt0137523/?ref_=fn_al_tt_1">Fight Club</a></td>
+					<td>2h 19min</td>
+				</tr>
+				<tr>
+					<td>2010</td>
+					<td><a href="http://www.imdb.com/title/tt1375666/?ref_=tt_rec_tt">Inception</a></td>
+					<td>2h 28min</td>
+				</tr>
+				<tr>
+					<td>1992</td>
+					<td><a href="http://www.imdb.com/title/tt0105236/?ref_=tt_rec_tt">Reservoir Dogs</a></td>
+					<td>1h 39min</td>
+				</tr>
+				<tr>
+					<td>2009</td>
+					<td><a href="http://www.imdb.com/title/tt0361748/?ref_=tt_rec_tt">Inglourious Basterds</a></td>
+					<td>2h 33min</td>
+				</tr>
+			</table>
+		</div>
+		<h2>Second table</h2>
+		<div>
+			<!--Luua tabel, mis näeb välja selline -> tulemus (lisada tabeli elemendile kindlasti border="1" atribuut)
+			Kasutada td elementide colspan ja rowspan atribuute (arvestada, et colspan puhul laieneb td paremale, rowspan puhul alla)
+			Kui tabeliväljad jäävad liiga kitsad, panna nendesse tühiku erimärke 4x&nbsp;, liiga madalad, siis paragrahvi element (CSS aitaks ka, aga me pole seda veel õppinud ) -->
+			<table border="1">
+				<tr>
+					<td colspan=3>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td rowspan=3>&nbsp;&nbsp;&nbsp;&nbsp; </td>
+				</tr>
+				<tr>
+					<td rowspan=3>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+				<tr>
+					<td colspan=3>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<h1>Forms</h1>
+	<div>
+		<!-- luua vorm, mis saadab infot GET meetodil endale (actionis viitate failile endale). Vormi sisse lisada vähemalt 6 erinevate tüüüpidega input elementi + submit nupp
+		NB! ära unusta name atribuute lisamast!
+
+		Input väljad on inline tüüpi ning enamasti ei väljenda mis tüüpi sisendit kasutajalt oodatakse. Atribuudiga placeholder saab vormielementidele (millesse kasutaja kirjutada saab) lisada teavitusteksti, atribuudiga value vaikimisi väärtust.
+
+		Vormi kujundamisel võib kasutada teisi HTML elemente. Näiteks saab label elementi kasutades siduda sisendväljaga mingit teksti (või ka pilti). Eriti kasulik on see radiobuttonite ja checkboxide puhul, millel pole 	vaikimisi näha, mis valikuid nad esindavad. -->
+		<h2>GET method</h2>
+		<div>
+		<form action="#" method="get">
+			First name: <input type="text" placeholder="First Name" name="fname"><br>
+			Last name: 	<input type="text" placeholder="Last Name" name="lname"><br>
+			Password: 	<input type="password" placeholder="Password" name="pwd" maxlength="8"><br>
+			Time:		<input type="time" name="time"><br>
+			E-mail: 	<input type="email" name="email" placeholder ="E-mail">
+			URL:		<input type="url" placeholder="URL" name="url"><br>
+						<input type="checkbox" name="icecream1" value="icecream_ch">I like chocolate icecream<br>
+						<input type="checkbox" name="icecream2" value="icecream_vn"> I like vanilla icecream<br>
+			Color: 		<input type="color" name="color"><br>
+			Are you:	<br>
+						<input type="radio" name="like" value="awesome"> Awesome<br>
+						<input type="radio" name="like" value="standard"> Standard<br>
+						<input type="radio" name="like" value="boring"> Boring<br>
+			Points given<input type="range" name="points" step="10">
+						<input type="submit" value="Submit"> <input type="reset">
+						
+		</form>
+				
+		</div>
+	</div>
+
+</body>
+</html>
