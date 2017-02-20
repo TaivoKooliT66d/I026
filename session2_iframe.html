@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="et">
+<title>I026 session 2 - Iframe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Taivo Liik">
+
+
+<body>
+	
+	<h1>Iframe</h1>
+	<div>
+	<!--selles ülesandes on eeldus, et eelnevad ülesanded on tehtud eraldi failidesse. (või on vähemalt 2 erinevat faili mida raamis kuvada)
+		luua selle ülesande jaoks uus .html lõpuline fail
+		kirjeldada selle kehaosas üks iframe element.
+		iframe elemendi algseks aadressiks võite valida suvalise koduse ülesande faili aadressi või luua eraldi uus tühi html fail.
+		Et raam oleks piisavalt suur ning mahutaks ilusti sisu ära, määrata talle laius ja kõrgus. (vaikimisi on ta kole väike)
+		anda iframe elemendile ka nime atribuut name
+		nüüd on olemas koht, kuhu sisu kuvada, järgmiseks on vaja lisada lingid.
+		Kõigepealt tuleb otsustada, kuhu lingid paigutada. Asukoha valimisel arvestada asjaoluga, et iframe element on inline tüüpi. Kui tahate midagi tema kohale või alla panna on vaja lisada sobilikku kohta reavahetus või kasutada block tüüpi elemente (div, p etc)
+		kui asukoht on selge, lisada iga eelnevate ülesannete jooksul loodud html faili jaoks üks link, millele on lisatud target atribuut mille väärtuseks on teie poolt valitud iframe nimi
+		linkidele klikkides peaks iframe sees sisu vahetuma-->
+		<p><a href="session2.html" target="session2">Session2 - Tables and GET</a></p>
+		<p><a href="session2_post.html" target="session2">Session2 - POST</a></p>
+		<div>
+
+			
+		<iframe src="session2.html" name="session2" height="1000" width="400">
+		  <p>Your browser does not support iframes.</p>
+		</iframe>
+
+				
+		</div>
+	</div>
+</body>
+</html>
