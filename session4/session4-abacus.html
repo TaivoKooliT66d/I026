@@ -6,6 +6,7 @@
 <meta name="author" content="Taivo Liik">
 
 <style>
+
 .bead{
 	/* Kõigepealt teeme veidi klassi bead stiili
 	Selleks, et nad oleks väiksemat mõõtu, määrata elemendi kõrgus ja laius (kumbki ~50px peaks olema sobiv suurus)
@@ -16,11 +17,11 @@
 	Selleks et nad läheks üksteise kõrvale anda neile omadus float väärtusega kas left või right
 	*/
 	height: 50px;
-	width: 50px;
-	border-color: #0A24A9;
+	width: 50px;	
+	background-color: #0A24A9;
 	border-radius: 50%;
 	box-shadow: 0px -11px 23px -3px black inset;
-	float: right;
+	float: left;
 	/*
 	Selleks, et nüüd bead klassi elemendid ilusti 'vardal' oleks tuleb neid veidi ülespoole nihutada. Selleks kasutada jälle ülemise margini määramist, aga seekord negatiivse väärtusega (suurus on bead klassi elemendi kõrgus / 2)
 	kui kõik läks plaanikohaselt, siis peaks nüüd olema näha mitu 'metallvarrast' ümmarguste pärlitega.
@@ -46,10 +47,23 @@
 	*/
 	margin-top:50px;
 	
-	
-	
 }
 
+.bead_r{
+	/*  Võite märgata, et viimase rea elemendid jäävad raami kohale, selleks et raami alumist äärt allapoole liigutada tasub kasutada paddingut, täpsemalt alumist paddingut (sest teistes suunades on kõik OK). Selle väärtuseks sobiks ka bead klassi elemendi kõrgus, siis on tulemus ilusti sümmeetriline.
+	Tulemust vaadates on näha, et kõik abakuse 'pärlid' on samas suunas, aga ülesande alguses näidatud pildil nii ei olnud. Selleks et osad pärlid oleks teises ääres anda neile veel üks klass (mäletad, klasse võis ühel elemendil olla mitu) ning määrata CSS-is seda klassi elementide vastaskülge hõljumine (kui enne oli left siis nüüd right etc.)
+	edasiseks (ajutiseks) pärlite hõljumissuunaga mängimiseks saab kasutada veebilehitsejas olevaid arendustööriistu */
+	float:right;
+
+}
+
+
+#raam{
+
+	/*  Selleks, et abakusel oleks ilus puidust raam, anda elemendile id-ga frame ilus paks piirjoon (stiil outset on kergelt 3D) */
+	border: 15px outset #DEB887;
+	padding-bottom: 50px;
+}
 </style>
 <body>
 <!--
@@ -57,15 +71,6 @@ hõljutamise (float kasutamise) harjutamiseks teeme ühe abakuse http://enos.itc
 , hakkame CSS-i tegema
 
 
-
-
-
-
-Selleks, et abakusel oleks ilus puidust raam, anda elemendile id-ga frame ilus paks piirjoon (stiil outset on kergelt 3D)
-
-Võite märgata, et viimase rea elemendid jäävad raami kohale, selleks et raami alumist äärt allapoole liigutada tasub kasutada paddingut, täpsemalt alumist paddingut (sest teistes suunades on kõik OK). Selle väärtuseks sobiks ka bead klassi elemendi kõrgus, siis on tulemus ilusti sümmeetriline.
-Tulemust vaadates on näha, et kõik abakuse 'pärlid' on samas suunas, aga ülesande alguses näidatud pildil nii ei olnud. Selleks et osad pärlid oleks teises ääres anda neile veel üks klass (mäletad, klasse võis ühel elemendil olla mitu) ning määrata CSS-is seda klassi elementide vastaskülge hõljumine (kui enne oli left siis nüüd right etc.)
-edasiseks (ajutiseks) pärlite hõljumissuunaga mängimiseks saab kasutada veebilehitsejas olevaid arendustööriistu
  -->
 
 	 <!-- Luua oma HTML dokumendi template põhjal uus html fail
@@ -74,16 +79,16 @@ edasiseks (ajutiseks) pärlite hõljumissuunaga mängimiseks saab kasutada veebi
 	sellega on html valmis-->
 	<div id="raam">
 		<div class="row">
-			<div class="bead"></div><div class="bead"></div><div class="bead"></div><div class="bead"></div>
+			<div class="bead bead_r"></div><div class="bead bead_r"></div><div class="bead"></div><div class="bead"></div>
 		</div>
 		<div class="row">
-			<div class="bead"></div><div class="bead"></div><div class="bead"></div>
+			<div class="bead bead_r"></div><div class="bead"></div><div class="bead"></div>
 		</div>
 		<div class="row">
-			<div class="bead"></div><div class="bead"></div><div class="bead"></div><div class="bead"></div><div class="bead"></div><div class="bead"></div>
+			<div class="bead"></div><div class="bead bead_r"></div><div class="bead bead_r"></div><div class="bead bead_r"></div><div class="bead"></div><div class="bead"></div>
 		</div>
 		<div class="row">
-			<div class="bead"></div><div class="bead"></div>
+			<div class="bead bead_r"></div><div class="bead"></div>
 		</div>
 	</div>
 
