@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="et">
+<title>I026 - Session 4 - duckhunt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Taivo Liik">
+
+<style>
+body{
+	background-color:#0A24A9;
+}
+
+#duck{
+	width:100%;
+	position:fixed;
+	bottom: 0;
+	left: 0;
+}
+#target{
+	/* Määrata kõige välimisele div-ile CSS abil võrdse väärtusega kõrgus ja laius, positsioneerimise meetodiks olgu fixed. koordinaadid vasakult ja ülevalt valida oma soovi järgi */
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	top: 200px;
+	left: 400px;
+}
+
+.rings{
+	/* Määrata kõigile sisemistele div-idele borderi raadius 50% (et nad oleks ümmargused) ning positsioneerimise meetodiks absolute
+	 */
+	border-radius: 50%;
+	position: absolute;
+	
+}
+
+.rings:nth-child(odd){
+	/* taustavärvus - vaheldumisi punane ja valge (kui sisemisi div-e on paarisarv siis on soovitatav alustada valgest) 	piirjoon - pidev joon taustaga sobivat värvi
+	*/
+	background-color:#FFFFFF;
+	border:5px solid #FFFFFF;
+}
+.rings:nth-child(even){
+	/* taustavärvus - vaheldumisi punane ja valge (kui sisemisi div-e on paarisarv siis on soovitatav alustada valgest) 	piirjoon - pidev joon taustaga sobivat värvi
+	*/
+	background-color:#FF0000;
+	border:5px solid #FF0000;
+}
+
+	/* Kasutada selektoreid mis lõppevad :nth-child(n) kirjapildiga, kus n on järjekorra number, et selekteerida järjest sisemisi div-e ning määrata nende:
+	Kõrgus - suurus protsentides. Esimene 100%-ga suurim, teised kahaneva väärtusega
+	laius - sama mis kõrgus
+	
+	left - kaugus div-e ümbritseva div-i äärest. arvutatav kui kasutada valemit "left=(100%-width%)/2
+	top - sama mis left*/
+	
+.rings:nth-child(1){
+	height:100%;
+	width:100%;
+	left:0;
+	top:0;
+}
+.rings:nth-child(2){
+	height:85%;
+	width:85%;
+	left:7.5%;
+	top:7.5%;
+
+}
+.rings:nth-child(3){
+	height:70%;
+	width:70%;
+	left:15%;
+	top:15%;
+
+}
+.rings:nth-child(4){
+	height:55%;
+	width:55%;
+	left:22.5%;
+	top:22.5%;
+
+}
+.rings:nth-child(5){
+	height:40%;
+	width:40%;
+	left:30%;
+	top:30%;
+
+}
+.rings:nth-child(6){
+	height:25%;
+	width:25%;
+	left:37.5%;
+	top:37.5%;
+
+}
+</style>
+<body>
+<!--
+neljandas loengus tutvusime kuidas CSS-iga elemente paigutada.
+
+positsioneerimise harjutamiseks joonistame div elementide abiga ühe sihtmärgi (target).
+Luua oma HTML template põhjal uus html fail
+lisada body vahele üks div (anda sellele id, siis on lihtne teda pärast CSS-iga mõjutada), mille sees on omakorda mitu sama klassiga div-i (nt. 6). 
+Need sisemised div-id saavad olema sihtmärgi eri suurusega rõngad
+
+
+Selleks et hetkel lihtsalt sihtmärki sisaldavat lehte huvitavamaks teha, lisada body sisse, ENNE välimist div-i pilt duck.png, mis oma 100%-lise laiusega positsioneerib samuti fixed positsioneerimise abil lehe alla vasakusse nurka
+KUI ekraani kõrguse tõttu jääb lehe ülemisse äärde valge riba, siis anda body elemendile taustavärviks #0A24A9
+tulemus võiks olla midagi taolist
+http://enos.itcollege.ee/~ttanav/VRI/Kodused/04/pos_res.png
+ -->
+<img id="duck" src="img/duck.png" alt="Duck"></img>
+<div id="target">
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+</div>
+
+</body>
+</html>
