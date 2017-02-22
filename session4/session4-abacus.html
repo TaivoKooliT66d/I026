@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="et">
+<title>I026 - Session 4 - abacus</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Taivo Liik">
+
+<style>
+
+</style>
+<body>
+<!--
+hõljutamise (float kasutamise) harjutamiseks teeme ühe abakuse
+Luua oma HTML dokumendi template põhjal uus html fail
+Olgu selle faili kehaosas üks div id-ga raam, milles on omakorda div-id (nii mitu kui tahad) klassiga row
+igas row klassi div-is olgu omakorda mitu div-i (nii mitu kui tahad) klassiga bead
+sellega on html valmis, hakkame CSS-i tegema
+Kõigepealt teeme veidi klassi bead stiili
+Selleks, et nad oleks väiksemat mõõtu, määrata elemendi kõrgus ja laius (kumbki ~50px peaks olema sobiv suurus)
+määrata mingi taustavärvus, muidu ei ole elemente näha
+Nagu ennegi, kasutada border-radius omadust elementide ümmarguseks tegemiseks
+Elementidele ruumilisuse andmiseks võib määrata sisemise varju: 
+box-shadow: 0px -11px 23px -3px black inset; (väärtuseid võib muuta, katsetades leiab omale sobivaima)
+
+nüüd peaks olema näha päris palju üksteise kohal olevaid ringe
+
+Selleks et nad läheks üksteise kõrvale anda neile omadus float väärtusega kas left või right
+Tegeleme vahepeal klassi row stiiliga
+Praegu on kõik bead klassi div-id kõrvuti, need mis enam ühte ritta ära ei mahu paiknevad järgmisesse jne.
+Selleks, et iga row klassi elemendi sisesed divid oleks omaette real tuleb igal row klassi elemendil sundida peale reavahetus.
+
+Selleks kasutatakse omadust clear. Väärtuseks soovitatavalt both, siis saab julgelt mängida elementide vasakusse või paremasse äärde paigutamisega
+row klassi elemente saame kasutada selleks, et kujutada abakuse pärlite metallist pulka
+Selleks anda row klassi elementidele piirjoon (taustavärv ei paistaks välja, kuna element on 0px kõrgune)
+
+Selleks, et pärlid oleks piirjoone poolt kujutatava 'metallvarda' peal, tuleb kõigepealt row klassi elemente veidi allapoole liigutada (muidu ei mahu lehe ülemisse äärde bead klassi div-e kuvada)
+allapoole liigutamiseks on mõistlik (saab ka teistmoodi) kasutada margineid, täpsemalt ülemist marginit. Selle väärtuseks soovitatavalt bead klassi elemendi kõrgus.
+
+Selleks, et nüüd bead klassi elemendid ilusti 'vardal' oleks tuleb neid veidi ülespoole nihutada. Selleks kasutada jälle ülemise margini määramist, aga seekord negatiivse väärtusega (suurus on bead klassi elemendi kõrgus / 2)
+kui kõik läks plaanikohaselt, siis peaks nüüd olema näha mitu 'metallvarrast' ümmarguste pärlitega.
+Selleks, et abakusel oleks ilus puidust raam, anda elemendile id-ga frame ilus paks piirjoon (stiil outset on kergelt 3D)
+
+Võite märgata, et viimase rea elemendid jäävad raami kohale, selleks et raami alumist äärt allapoole liigutada tasub kasutada paddingut, täpsemalt alumist paddingut (sest teistes suunades on kõik OK). Selle väärtuseks sobiks ka bead klassi elemendi kõrgus, siis on tulemus ilusti sümmeetriline.
+Tulemust vaadates on näha, et kõik abakuse 'pärlid' on samas suunas, aga ülesande alguses näidatud pildil nii ei olnud. Selleks et osad pärlid oleks teises ääres anda neile veel üks klass (mäletad, klasse võis ühel elemendil olla mitu) ning määrata CSS-is seda klassi elementide vastaskülge hõljumine (kui enne oli left siis nüüd right etc.)
+edasiseks (ajutiseks) pärlite hõljumissuunaga mängimiseks saab kasutada veebilehitsejas olevaid arendustööriistu
+ -->
+
+
+</body>
+</html>
