@@ -1,90 +1,212 @@
 <!DOCTYPE html>
 <html lang="et">
-<title>I026 - Session 1</title>
+<title>I026 - Session 3 - Session 1 remake</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Taivo Liik">
 
 <style>
-body, html {height: 100%}
-.bg {
-  
+body, html {
+	height: 100%;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+#container{
+	position: relative;
+	width: 1024px;
+	height: 1280px;
+}
+#bg {
+	background: url("../session1/img/bg.png");
     min-height: 100%;
     background-position: center;
     background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
-div.centering h1,div.centering p{
+#text{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.image{
+	opacity:0.8;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+}
+
+.img_middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.sheep:hover .image {
+  opacity: 0.3;
+}
+
+.sheep:hover .img_middle {
+  opacity: 1;
+  cursor: wait;
+}
+.sheep {
+    position: relative;
+    width: 50%;
+	margin-left: auto;
+    margin-right: auto;
+	cursor: crosshair;
+}
+
+.img_text {
+	background-color: #4CAF50;
+	color: white;
+	font-size: 16px;
+	padding: 16px 32px;
+}
+.soon{
 	margin: 0;
 	font-size:5em;
 	color: #9900ff;
+	text-align:center;
+	font-weight:border;
+	font-style:oblique;
 	
 	
+}
+#time_left{
+	font-size:3em;
+	position:relative;
 
 }
-div.centering{
-	height: 40em;
-	display: flex;
-	align-items: center;
-	justify-content: center 
+.headings{
+	cursor:help;
+	background-color: #7FFF00;
+	font-family: "Lucida Console", Monaco, monospace;
+	text-decoration:underline;
+
+}
+
+.lorem{
+	border: 5px solid #9900ff;
+	border-radius:20px;
+	background-color:  #7FFF00;
 	
 }
-div.centering p{
-	margin-top:20%;
+
+a:hover{
+	font-size:20px;
+	color:#9900ff;
+}
+a{
+	border-left:20px solid #9900ff;
+	border-right:5px dotted #9900ff;
+	font-weight: bolder;
+	text-shadow: 2px 2px #9900ff; 
 	
 }
+
+ol{
+    list-style-type: upper-roman;
+	font-size:30px;
+	font-weight:bolder;
+}
+ul{
+    list-style-type: square;
+	font-size:30px;
+	font-weight:bolder;
+
+}
+
 </style>
 <body>
-<!--luua uus HTML fail.
-anna lehele nimetus/tiitel, selleks kirjuta midagi <title> ja </title> tag-ide vahele
-Kasutada võimalikult paljusid loengus nähtud elemente, et esitada mingisugune lugu / artikkel (kui omal lugu pole, aitab google/wikipedia hädast välja)
-Lisa kindlasti vähemalt üks pilt. Kuna pildid on inline tüüpi siis võib neid vabalt teiste elementide sisse paigutada
+<!--Võtame aluseks esimeses koduses töös loodud artikli HTML faili ning teeme ta värvilisemaks.
+Kasutada võimalikult paljusid järgnevatest omadustest. 
 
-ära satu masendusse, et tulemus nii must-valge on. Küll jõuame värvilisi lehti ka teha :)
-Selleks, et oleks võimalikult vähe probleeme lehe kuvamisel erinevates veebilehitsejates peaks HTML olema valiidne (vastama standardile). Seda saab kontrollida W3 HTML validaatoriga.
-Kui validaator ei leia ühtegi viga, lisa oma lehe alla ka validaatori logo (sellel klikkides saab lehte uuesti kontrollida)
- http://enos.itcollege.ee/~ttanav/VRI/Kodused/01/ylesanne.html
+width, height - näiteks pildi suuruse määramiseks
+
+background, color - ernevate pealkirjade/paragrahvide tausta ja tekstivärvi mõjutamiseks
+
+border-width, border-color, border-style - piirjoone lisamiseks. 
+Saab määrata ka ainult kindla suuna piirjooni 
+	border-top-width, 
+	border-left-color, 
+	border-bottom-style 
+	etc. 
+NB! ilma stiilita piirjoont ei kuvata!
+
+border-radius - ümarate nurkade jaoks
+
+font-size - teksti suurus
+font-family - fondi määramine
+text-align - teksti joondus
+text-decoration - teksti alla/läbi/üle joonimine
+font-style - teksti kaldkirja muutmine
+font-weight - teksti rasvasuse määramine
+
+list-style-type - listi elementide esise nummerduse määramine
+cursor - elemendi kohal olles hiire kursori määramine
+ http://enos.itcollege.ee/~ttanav/VRI/Kodused/03/ylesanne.html
  -->
-<div class="bg">
+<div id="container">
+	<div id="bg"></div>
+	<div id="text">
+	  <h2 class="headings">Those are some random headings</h2>
+	  <h3 class="headings">Without any style</h3>
+	  <h4 class="headings">Class</h4>
+	  <h5 class="headings">Looks</h5>
+	  <h6 class="headings">Just as they are</h6>
+	  <h1 class="headings soon">COMING SOON</h1>
+	  <div class="sheep">
 
-  <h2>Those are some random headings</h2>
-  <h3>Without any style</h3>
-  <h4>Class</h4>
-  <h5>Looks</h5>
-  <h6>Just as they are</h6>
-  <div class="centering">
-    <h1>COMING SOON</h1>
-	<img src="sheep.jpeg" alt="Some sheep">
-    <p>14 weeks left</p>
+		<img class="image" src="../session1/img/sheep.jpeg" alt="Some sheep">
+			<div class="img_middle">
+				<div class="img_text">SHEEP: Only 13 weeks left</div>
+			</div>
+		  </div>
+		<p class="soon" id="time_left">13 weeks left</p>
 	
-  </div>
-<ul>
-	<li>Basically</li>
-	<li>This page is homework, will contain something useful later, but for now, just random jibbrish</li>
-</ul>
-<ol>
-	<li>Also those elements can be done</li>
-	<li>Also those elements can be done</li>
-</ol>
-<a href="http://www.lipsum.com/feed/html">Basically below some formatted lorem ipsum to prove that I am able to do it.</a>
-<p>
+	<ul>
+		<li>Basically</li>
+		<li>This page is homework, will contain something useful later, but for now, just random jibbrish</li>
+	</ul>
+	<ol>
+		<li>Also those elements can be done</li>
+		<li>Also those elements can be done</li>
+	</ol>
+	<a href="http://www.lipsum.com/feed/html">Basically below some formatted lorem ipsum to prove that I am able to do it.</a>
+	<p class="lorem">
 
-<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b> Quisque rutrum sem nec hendrerit dictum. Proin imperdiet diam et ipsum imperdiet, sit amet mollis odio maximus. Nullam egestas quam ipsum, sit amet congue mi condimentum sit amet. Praesent nisl ligula, dignissim non odio non, porttitor maximus nibh. In id nulla eu libero semper vestibulum. Phasellus tempus sagittis pulvinar. Aliquam mollis eu tellus id vehicula. Morbi non magna molestie, interdum eros quis, consectetur sem. Fusce vitae nisi lectus. Sed placerat congue venenatis. Nullam vel magna nec leo iaculis volutpat.
+	<b>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</b> Quisque rutrum sem nec hendrerit dictum. Proin imperdiet diam et ipsum imperdiet, sit amet mollis odio maximus. Nullam egestas quam ipsum, sit amet congue mi condimentum sit amet. Praesent nisl ligula, dignissim non odio non, porttitor maximus nibh. In id nulla eu libero semper vestibulum. Phasellus tempus sagittis pulvinar. Aliquam mollis eu tellus id vehicula. Morbi non magna molestie, interdum eros quis, consectetur sem. Fusce vitae nisi lectus. Sed placerat congue venenatis. Nullam vel magna nec leo iaculis volutpat.
 
-<u>Nunc vitae lorem justo. Praesent sollicitudin condimentum est, sit amet aliquet mi faucibus quis. In laoreet non nunc a cursus. In elementum venenatis odio, in euismod ipsum sagittis quis. Nam purus diam, porttitor vel nisl et, dapibus consectetur lorem. Suspendisse ut molestie ligula, in tristique velit. Nulla facilisi. Aliquam non euismod orci, a ullamcorper lacus. Proin non justo eu lorem efficitur dapibus ut id risus. Proin quis nisl luctus, suscipit libero et, lobortis lorem. Morbi feugiat diam sed rutrum dapibus. Nunc dictum tempus nisl, vitae dignissim tortor rhoncus ac. Pellentesque nibh tellus, vehicula eget dictum sed, eleifend a odio. Sed vel tincidunt turpis.</u>
+	<u>Nunc vitae lorem justo. Praesent sollicitudin condimentum est, sit amet aliquet mi faucibus quis. In laoreet non nunc a cursus. In elementum venenatis odio, in euismod ipsum sagittis quis. Nam purus diam, porttitor vel nisl et, dapibus consectetur lorem. Suspendisse ut molestie ligula, in tristique velit. Nulla facilisi. Aliquam non euismod orci, a ullamcorper lacus. Proin non justo eu lorem efficitur dapibus ut id risus. Proin quis nisl luctus, suscipit libero et, lobortis lorem. Morbi feugiat diam sed rutrum dapibus. Nunc dictum tempus nisl, vitae dignissim tortor rhoncus ac. Pellentesque nibh tellus, vehicula eget dictum sed, eleifend a odio. Sed vel tincidunt turpis.</u>
 
-<em>
-Nullam ut molestie lacus. Sed porta ac metus vitae semper. Pellentesque aliquet velit rutrum orci pretium iaculis at ac lacus. Vivamus vel ligula euismod, tincidunt magna in, aliquet metus. Suspendisse nunc justo, pharetra sed porta eu, faucibus quis tellus. Pellentesque eu nibh at erat cursus suscipit. Aliquam ante arcu, viverra at nisl sit amet, tempus elementum metus. Vivamus vitae dolor at ligula mollis lobortis. Proin interdum, mi at tincidunt accumsan, nibh lectus hendrerit ipsum, et pulvinar ligula velit vel urna. Proin ante enim, molestie nec lorem nec, molestie iaculis nulla. Phasellus maximus venenatis enim, vitae blandit nunc viverra ut.
-</em>
-Phasellus feugiat porttitor massa. Cras mollis, urna eu maximus tempor, massa augue cursus mi, eu volutpat metus lacus non odio. Suspendisse eget odio ligula. Nunc pulvinar tortor vitae felis facilisis, sit amet interdum lorem dignissim. Mauris congue pretium elit, eget ullamcorper neque ornare nec. Suspendisse potenti. Donec ipsum felis, lobortis ut malesuada eu, tristique laoreet augue. Etiam id libero vel felis ornare egestas ut et turpis. Suspendisse lacus quam, blandit vitae elit sit amet, hendrerit semper tortor.
-</p>
-<pre>
-Duis euismod purus augue, eget sodales eros sollicitudin non. Fusce dapibus leo quis ultricies elementum. Integer est nisi, sagittis placerat interdum id, congue quis eros. Donec aliquam malesuada ipsum, in lacinia nulla blandit non. Sed a nisi vitae massa vulputate elementum. Etiam eu felis vel nunc dapibus fermentum ut quis nunc. Integer ut ultricies quam, sit amet posuere elit. Aenean eu mattis nisl, in tempus purus. Nulla nec egestas nisl. Curabitur congue egestas pretium.
-</pre>
+	<em>
+	Nullam ut molestie lacus. Sed porta ac metus vitae semper. Pellentesque aliquet velit rutrum orci pretium iaculis at ac lacus. Vivamus vel ligula euismod, tincidunt magna in, aliquet metus. Suspendisse nunc justo, pharetra sed porta eu, faucibus quis tellus. Pellentesque eu nibh at erat cursus suscipit. Aliquam ante arcu, viverra at nisl sit amet, tempus elementum metus. Vivamus vitae dolor at ligula mollis lobortis. Proin interdum, mi at tincidunt accumsan, nibh lectus hendrerit ipsum, et pulvinar ligula velit vel urna. Proin ante enim, molestie nec lorem nec, molestie iaculis nulla. Phasellus maximus venenatis enim, vitae blandit nunc viverra ut.
+	</em>
+	Phasellus feugiat porttitor massa. Cras mollis, urna eu maximus tempor, massa augue cursus mi, eu volutpat metus lacus non odio. Suspendisse eget odio ligula. Nunc pulvinar tortor vitae felis facilisis, sit amet interdum lorem dignissim. Mauris congue pretium elit, eget ullamcorper neque ornare nec. Suspendisse potenti. Donec ipsum felis, lobortis ut malesuada eu, tristique laoreet augue. Etiam id libero vel felis ornare egestas ut et turpis. Suspendisse lacus quam, blandit vitae elit sit amet, hendrerit semper tortor.
+	</p>
+	<pre>
+	Duis euismod purus augue, eget sodales eros sollicitudin non. Fusce dapibus leo quis ultricies elementum. Integer est nisi, sagittis placerat interdum id, congue quis eros. Donec aliquam malesuada ipsum, in lacinia nulla blandit non. Sed a nisi vitae massa vulputate elementum. Etiam eu felis vel nunc dapibus fermentum ut quis nunc. Integer ut ultricies quam, sit amet posuere elit. Aenean eu mattis nisl, in tempus purus. Nulla nec egestas nisl. Curabitur congue egestas pretium.
+	</pre>
+	</div>
 </div>
+<div>
 <p>
- <a href="http://validator.w3.org/check?uri=referer">
-  <img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
- </a>
+	<a href="http://validator.w3.org/check?uri=referer">
+		<img src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Strict" height="31" width="88" />
+	</a>
 </p>
+</fdiv>
 </body>
 </html>
