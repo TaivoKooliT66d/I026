@@ -20,13 +20,35 @@
 	*/
 
 var target;
-function getTarget(){
+window.onload=function(){
 	target = document.getElementById("target");	
 }
 
 function moveTarget(){
+	/*this is not good practice, we still want to diplay the target on the screen, not outside the screen
 	target.style.left = Math.random()*1000+"px";
 	target.style.top = Math.random()*1000+"px";
+	*/
+	w = window.innerWidth*Math.random();
+	h = window.innerHeight*Math.random();
+	if(w < 110){
+		w = 110;
+	}
+	if((w+110) > window.innerWidth){
+		w = window.innerWidth-110;
+	}
+	if(h < 110){
+		h = 110;
+	}
+	if((h+110) > window.innerHeight){
+		h = window.innerHeight-110;
+	}
+
+
+	target.style.left = w+"px";
+	target.style.top = h+"px";
+
+	
 }
 
 </script>
@@ -108,7 +130,7 @@ body{
 
 }
 </style>
-<body onload="getTarget()">
+<body>
 
 <img id="duck" src="img/duck.png" alt="Duck"></img>
 <div id="target" onclick="moveTarget()">
