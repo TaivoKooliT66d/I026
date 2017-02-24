@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="et">
+<title>I244 - Session 4 - duckhunt</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Taivo Liik">
+<script>
+	/*
+	Eelmisel korral tegime div elementidest märklaua. Täiendame seda HTML faili (võib ka koopia olla) ning teeme nii, et kui kasutaja klikib märklaual, siis see liigub kuskile mujale.
+	Lisada javascripti kirjutamiseks vajalikud <script> tagid.
+	oodata lehe laadimise lõppu 
+
+	window.onload = function() {
+	// lehe laadimine lõpetatud. Siia funktsiooni sisse kirjutan elementide mõjutamise käsud
+	}
+	hankida märklauda ümbritsev element ning salvestada selle objekt edasise tegevuse jaoks muutujasse
+	määrata objekti onclick sündmuse väärtuseks nimetu funktsioon
+	muutuja.onclick=function(){/*See koodiblokk käivitub kui elemendile klikkida*}
+	selle funktsiooni sees määrata antud objekti stiilikirjelduses top ja left koordinaadid kasutades Math.random() funktsiooni (tagastab arvu 0 ja 1 vahel) korrutist mingi suurema arvuga.
+	*/
+
+var target;
+function getTarget(){
+	target = document.getElementById("target");	
+}
+
+function moveTarget(){
+	target.style.left = Math.random()*1000+"px";
+	target.style.top = Math.random()*1000+"px";
+}
+
+</script>
+<style>
+body{
+	background-color:#0A24A9;
+}
+
+#duck{
+	width:100%;
+	position:fixed;
+	bottom: 0;
+	left: 0;
+}
+#target{
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	top: 200px;
+	left: 400px;
+}
+
+.rings{
+	border-radius: 50%;
+	position: absolute;
+	
+}
+
+.rings:nth-child(odd){
+	background-color:#FFFFFF;
+	border:5px solid #FFFFFF;
+}
+.rings:nth-child(even){
+	background-color:#FF0000;
+	border:5px solid #FF0000;
+}
+
+
+	
+.rings:nth-child(1){
+	height:100%;
+	width:100%;
+	left:0;
+	top:0;
+}
+.rings:nth-child(2){
+	height:85%;
+	width:85%;
+	left:7.5%;
+	top:7.5%;
+
+}
+.rings:nth-child(3){
+	height:70%;
+	width:70%;
+	left:15%;
+	top:15%;
+
+}
+.rings:nth-child(4){
+	height:55%;
+	width:55%;
+	left:22.5%;
+	top:22.5%;
+
+}
+.rings:nth-child(5){
+	height:40%;
+	width:40%;
+	left:30%;
+	top:30%;
+
+}
+.rings:nth-child(6){
+	height:25%;
+	width:25%;
+	left:37.5%;
+	top:37.5%;
+
+}
+</style>
+<body onload="getTarget()">
+
+<img id="duck" src="img/duck.png" alt="Duck"></img>
+<div id="target" onclick="moveTarget()">
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+	<div class="rings"></div>
+</div>
+
+</body>
+</html>
