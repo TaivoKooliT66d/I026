@@ -8,9 +8,54 @@
 	<style type="text/css">
 		.active { background: skyblue; padding: 10px;}
 	</style>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 	<script type="text/javascript">
-
+	//NB! ära unusta lehe laadimise lõppu oodata!
+	$( window ).load(function() {
+		$("li").first().addClass("active");
+		/*
+		lehe laadimisel rakendatakse esimesele listielemendile klass 'active'
+		nupule tekstiga 'edasi' klikkides võetakse kõigilt listielementidelt klass ära ning antakse järjekorras järgmisele elemendile.
+		St kui enne oli klass esimesel, siis nüüd peaks ta olema AINULT teisel elemendil.
+		*/
+		$("#next").click(function(){ 
+			var active = $("li.active").index();
+			/* Kui enam järgmist elementi pole (hetkel on klass viimasel elemendil), peaks klass rakenduma esimesele elemendile. */
+			if(active == $("li").length-1){
+				active = -1;
+			}
+			$("li.active").removeClass();
+			$("li").eq(active+1).addClass("active")		
+			});
+		
+		/* 
+		nupule tekstiga 'tagasi' klikkides võetakse kõigilt listielementidelt klass ära ning antakse järjekorras eelmisele elemendile.
+		St kui enne oli klass teisel, siis nüüd peaks ta olema AINULT esimesel elemendil.
+		*/
+		$("#prev").click(function(){ 
+			var active = $("li.active").index();
+			if(active == 0){
+			/*
+			Kui enam eelmist elementi pole (hetkel on klass esimesel elemendil), peaks klass rakenduma viimasele elemendile.
+			*/
+				active = active == $("li").length-1;
+			}
+			$("li.active").removeClass();
+			$("li").eq(active-1).addClass("active")		
+			});
+	
+	});
+/*
+Selle funktsionaalsuse loomiseks saab kasutada järgnevaid meetodeid:
+.click() hiireklikile reageerimiseks
+.first() ja .last() hangivad vastavalt esimese või viimase eelnevale jquery selektorile vastava elemendi.
+Näiteks: viimase li elemendi hankimiseks $('li').last()
+.removeClass('klassinimi') ja .addClass('klassinimi') elemendil vastavalt mingi klassi eemadamiseks või lisamiseks
+.is() meetod võimaldab kontrollida, kas mingi element vatab mingile selektorile. 
+Näiteks, kas element on oma vanema sees viimane .is(":last-child")
+.next() ja .prev() vastavalt järgmise või eelmise elemendi hankimiseks. Kui vastavas suunas rohkem elemente pole, tagastab funktsioon tühja massiivi (mille pikkus on 0).
+Hetkel klassi omav element tasub hoida mingis muutujas, mille väärtus (element) muudetakse vastavalt nupuvajutusele
+*/
 	</script>
 </head>
 <body>
