@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Session 7 - Reverted</title>
+	<meta name="author" content="Taivo Liik">
+
+    </style>
+</head>
+<body>
 <?php
 /* Kirjutada PHP programm, kus mingis muutujas olev tekst esitatakse peegelpildis.
 Mitte kasutada PHP-sse sisse kirjutatud funktsiooni strrev();, vaid luua oma funktsioon
@@ -17,7 +27,9 @@ function revert($str){
 	return implode("",$revertedString);
 }
 $str = "Taivo Liik";
-echo "Original String: ".$str;
+echo "<p>Original String: ".$str."</p>";
 echo "<br>";
-echo "Reverted String: ".revert($str);
+echo "<p>Reverted String: ".revert($str)."</p>";
 ?>
+</body>
+</html>
