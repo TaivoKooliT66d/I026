@@ -2,7 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Suur täht</title>
+    <title>Session 7 - Suur täht</title>
+	<meta name="author" content="Taivo Liik">
+
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
     <style>
     body {
@@ -40,7 +42,7 @@ tekstist saab esimese tähe kätte võtmega null $string[0]
 Stringist saab lugeda välja alamstringe
 */
 $paragraphs = explode("\n", $text);
-foreach ($paragraphs as &$value) {
+foreach ($paragraphs as $value) {
 	echo  "<span>".$value[0]."</span>".substr($value,1)."<br><br>";
 }
 
