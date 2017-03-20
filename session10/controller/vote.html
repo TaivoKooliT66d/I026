@@ -1,0 +1,43 @@
+<div id="wrap">
+<?php  
+	$error = array();		
+	$showpic = 0; //detmine if to show picture from session or not.
+
+	if(isset($_SESSION['voted_for'])){
+		$error = array('result'=>'Oled juba hääletanud järgmise pildi poolt:');
+		$showpic = 1;
+	}
+	?>
+	<?php
+		if(count($error)>0):?>
+			<p class="error"><?php echo $error['result'];?></p>
+		<?php endif;?>
+	
+	<?php if($showpic==1):?>
+			
+			<p>
+			<label for="<?php echo $pics[htmlspecialchars($_SESSION["voted_for"])]['label']; ?>" >
+				<img src="<?php echo $pics[htmlspecialchars($_SESSION["voted_for"])]['src']; ?>" alt="<?php echo $pics[htmlspecialchars($_SESSION["voted_for"])]['alt']; ?>" />
+			</label>
+			</p>
+	<?php endif;?>
+	
+	<?php if(count($error)<=0 && $showpic==0):?>
+	<h3>Vali oma lemmik :)</h3>
+	<form action="?page=result" method="POST">
+		<?php foreach($pics as $key=>$value): ?>
+		<p>
+			<label for="<?php echo $value['label']; ?>" >
+				<img src="<?php echo $value['src']; ?>" alt="<?php echo $value['alt']; ?>" height="100"/>
+			</label>
+			<input type="radio" value="<?php echo $key; ?>"  id="<?php echo $value['label']; ?>"  name="pilt"/>
+		</p>
+		<?php endforeach; ?>
+	
+		<br/>
+		<input type="submit" value="Valin!"/>
+	</form>
+	<?php endif?>
+
+
+</div>
