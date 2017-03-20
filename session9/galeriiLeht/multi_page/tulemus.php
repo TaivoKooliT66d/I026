@@ -8,7 +8,7 @@
 	
 	if (empty($_GET["pilt"])) {
 		$error = array('result'=>'Valik tegemata: Palun vali pilt'); 
-				var_dump(($error));
+
 
 	}
 
