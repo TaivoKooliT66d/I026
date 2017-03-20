@@ -10,5 +10,5 @@ INSERT INTO loomaaed (nimi, liik, puur,vanus) VALUES ('Flipper','Delfiin','30','
 
 SELECT nimi, puur FROM loomaaed WHERE puur = 3;
 SELECT MAX(vanus), MIN(vanus) FROM loomaaed;
-SELECT puur, COUNT(1) FROM loomaaed GROUP BY puur
+SELECT puur, COUNT(1) FROM loomaaed GROUP BY puur;
 UPDATE loomaaed SET vanus = vanus + 1;
